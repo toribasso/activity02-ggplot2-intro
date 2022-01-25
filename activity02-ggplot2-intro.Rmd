@@ -216,20 +216,23 @@ Create graphs to explore the relationship between `bill_length_mm` and each of `
 Using these three graphs to discuss which of these three categorical variables seems to be contributing more to these two peaks and explain your reasoning.
 
 ```{r bill_length_by_species}
-
+ggplot(data = penguins, mapping = aes(x = bill_length_mm, color=species)) +
+  geom_histogram()
 ```
 
 
 ```{r bill_length_by_sex}
-
+ggplot(data = penguins, mapping = aes(x = bill_length_mm, color=sex)) +
+  geom_histogram()
 ```
 
 
 ```{r bill_length_by_island}
-
+ggplot(data = penguins, mapping = aes(x = bill_length_mm)) +
+  geom_histogram(color=islands)
 ```
 
-**Response**:
+**Response**: It seems like species are driving the two peaks.
 
 
 
