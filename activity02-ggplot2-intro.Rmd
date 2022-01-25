@@ -247,23 +247,25 @@ Here we continue exploring scatterplots using `{ggplot2}`.
 In the code chunk below, create a scatterplot for the relationship between `flipper_length_mm` and `body_mass_g`.
 
 ```{r flipper_vs_mass}
-
+ggplot(data = penguins, mapping = aes(y = flipper_length_mm, x=body_mass_g)) +
+  geom_point()
 ```
 
 Describe any patterns that you notice.
 
-**Response**:
+**Response**: There is a positive linear relationship between body mass and flipper length.
 
 
 Recreate your scatterplot in the code chunk below; however,  *map* `species` to the `color` and `shape` aesthetics.
 
 ```{r flipper_vs_mass_with_species}
-
+ggplot(data = penguins, mapping = aes(y = flipper_length_mm, x=body_mass_g, color=species, shape=species)) +
+  geom_point()
 ```
 
 Describe any patterns that you notice.
 
-**Response**:
+**Response**: Gentoo penguins seem to have a higher body mass and greater flipper length.
 
 
 The previous plot looked great except even in this rather small dataset (n = 344), there might are a number of points overlapping.
